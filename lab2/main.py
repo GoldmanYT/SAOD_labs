@@ -24,10 +24,13 @@ def main():
                     Node(
                         'j',
                         Node(
-                            'k',
+                            'j',
                             Node(
-                                'l',
-                                Node('m')
+                                'k',
+                                Node(
+                                    'l',
+                                    Node('m')
+                                )
                             )
                         )
                     )

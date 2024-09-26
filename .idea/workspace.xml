@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 1 - report left">
+    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 1 - report left (2)">
+      <change afterPath="$PROJECT_DIR$/lab2/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/deque.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/deque.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/Лабораторная работа 1 (САОД).docx" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/Лабораторная работа 1 (САОД).docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,19 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in deque.py.executor": "Debug",
-    "Python.deque.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/DEXP/PycharmProjects/SAOD",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in deque.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.deque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DEXP/PycharmProjects/SAOD&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DEXP\PycharmProjects\pythonProject1\lab1" />
@@ -173,10 +176,33 @@
       <option name="project" value="LOCAL" />
       <updated>1727332606179</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lab 1 - report left (2)">
+      <option name="closed" value="true" />
+      <created>1727338057403</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727338057403</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -191,6 +217,7 @@
     <MESSAGE value="lab 1 - done" />
     <MESSAGE value="IDE settings" />
     <MESSAGE value="lab 1 - report left" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 1 - report left" />
+    <MESSAGE value="lab 1 - report left (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 1 - report left (2)" />
   </component>
 </project>
