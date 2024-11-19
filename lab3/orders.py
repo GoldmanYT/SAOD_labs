@@ -1,26 +1,37 @@
 """
 Блок 3:
-Имеется конечное множество заказов, каждый из ко-
-торых требует ровно одну единицу времени для сво-
-его выполнения. Для каждого заказа известны срок
-выполнения и штраф за невыполнение к сроку. Требу-
-ется найти порядок выполнения заказов, при котором
-сумма штрафов будет наименьшей.
+Имеется конечное множество заказов, каждый из которых
+требует ровно одну единицу времени для своего
+выполнения. Для каждого заказа известны срок выполнения
+и штраф за невыполнение к сроку. Требуется найти порядок
+выполнения заказов, при котором сумма штрафов будет
+наименьшей.
 """
 
-from tkinter import *
-from tkinter.ttk import *
-from consts import ORDERS_TITLE
+from random import randint
+from dataclasses import dataclass
 
 
-class MainWindow:
-    def __init__(self):
-        root = Tk()
-        root.geometry('800x600')
-        root.title(ORDERS_TITLE)
+@dataclass()
+class Order:
+    deadline: int
+    fine: int
 
-        root.mainloop()
+
+def get_orders(n: int) -> list[Order]:
+    a, b = 10, 99
+    return [Order(
+        deadline=randint(a, b), fine=randint(a, b)
+    ) for _ in range(n)]
+
+
+def best_order_of_order():
+    n = 10
+    orders: list[Order] = get_orders(n)
+    k = 0
+    while k >= 0:
+        pass
 
 
 if __name__ == '__main__':
-    MainWindow()
+    best_order_of_order()
