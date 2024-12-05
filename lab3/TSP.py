@@ -24,14 +24,32 @@ def print_costs(costs: list[list[int]]):
 def branch_and_bound(costs: list[list[int]]):
     min_cost = inf
     cost = 0
-    cur_node = 0
-    s: list[list[int]] = []
+    best_solution = []
+    n = len(costs)
+    s: dict[int, list[int]] = {0: list(range(1, n))}
+    a: list[int] = [0]
     k = 0
-    # while k >= 0:
-    #     while s[k] and cost < min_cost:
-    #         pass
-    #     k -= 1
-    #     cost -= costs[cur_node]
+    while k >= 0:
+        while s[k] and cost < min_cost:
+            next_node = s[k].pop()
+            cost += costs[a[-1]][next_node]
+            a.append(next_node)
+            if len(a) == n + 1 and cost < min_cost:
+                best_solution = a[:]
+                min_cost = cost
+            k += 1
+            s[k] = [
+                i for i in range(n)
+                if i not in a
+            ] if len(a) < n else [0]
+        if a:
+            prev_node = a.pop()
+            if a:
+                cost -= costs[a[-1]][prev_node]
+        k -= 1
+
+    print(f'min cost: {min_cost}')
+    print('solution:', ' - '.join(map(str, best_solution)))
 
 
 def greedy(costs: list[list[int]]):
@@ -55,7 +73,7 @@ def greedy(costs: list[list[int]]):
     cost += costs[cur_node][start_node]
     solution.append(start_node)
 
-    print(f'cost: {cost}')
+    print(f'min cost: {cost}')
     print('solution:', ' - '.join(map(str, solution)))
 
 
