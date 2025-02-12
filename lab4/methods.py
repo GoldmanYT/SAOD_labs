@@ -1,16 +1,21 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 
+to_mcs = 1_000_000
+
 
 def timer(search):
     def search_with_time(self, array, value):
         start_time = datetime.now()
         success = search(self, array, value)
         end_time = datetime.now()
+        time = int(to_mcs * (end_time - start_time).total_seconds())
         if success:
-            self.time_success += (end_time - start_time).total_seconds()
+            self.time_success += time
+            self.count_success += 1
         else:
-            self.time_fail += (end_time - start_time).total_seconds()
+            self.time_fail += time
+            self.count_fail += 1
 
     return search_with_time
 
@@ -21,6 +26,8 @@ class ArraySearchMethod(ABC):
     def __init__(self):
         self.count_compare_fail = 0
         self.count_compare_success = 0
+        self.count_fail = 0
+        self.count_success = 0
         self.time_fail = 0
         self.time_success = 0
 
@@ -36,11 +43,14 @@ class ArraySearchMethod(ABC):
     def search(self, array, value):
         pass
 
+    def get_result(self):
+        return {'count_compare_fail': self.count_compare_fail // self.count_fail,
+                'count_compare_success': self.count_compare_success // self.count_success,
+                'time_fail': self.time_fail // self.count_fail,
+                'time_success': self.time_success // self.count_success}
+
     def __str__(self):
-        return str({'count_compare_fail': self.count_compare_fail,
-                    'count_compare_success': self.count_compare_success,
-                    'time_fail': self.time_fail,
-                    'time_success': self.time_success})
+        return str(self.get_result())
 
 
 class LinearSearch(ArraySearchMethod):
