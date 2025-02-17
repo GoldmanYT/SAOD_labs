@@ -79,12 +79,14 @@ class BinarySearch(ArraySearchMethod):
 
         while right - left > 1:
             mid = (left + right) // 2
-            compare_count += 1
             if array[mid] > value:
+                compare_count += 1
                 right = mid
             elif array[mid] < value:
+                compare_count += 2
                 left = mid + 1
             else:
+                compare_count += 3
                 return self.success(compare_count)
 
         return self.fail(compare_count)
