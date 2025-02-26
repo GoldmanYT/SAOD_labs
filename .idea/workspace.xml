@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 2 - maybe finished">
-      <change afterPath="$PROJECT_DIR$/lab3/TSP.py" afterDir="false" />
+    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 3 - greedy TSP">
+      <change afterPath="$PROJECT_DIR$/lab4/SAOD_L_4.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/consts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/knight_cycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/knight_cycle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/simple_fractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/simple_fractions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/~$OD_L_3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,33 +44,38 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2mWjJu4gS0GWQl9pWydlv3Njk1Y" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in deque.py.executor": "Debug",
-    "Python.TSP.executor": "Run",
-    "Python.deque.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.simple_fractions.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/DEXP/PycharmProjects/SAOD",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in deque.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.TSP.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.methods.executor&quot;: &quot;Run&quot;,
+    &quot;Python.simple_fractions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DEXP/PycharmProjects/SAOD/lab4&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DEXP\PycharmProjects\SAOD\lab4" />
       <recent name="C:\Users\DEXP\PycharmProjects\pythonProject1\lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.TSP">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="TSP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SAOD" />
       <option name="ENV_FILES" value="" />
@@ -119,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SAOD" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,11 +129,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab2/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab4/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="methods" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SAOD" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab4/methods.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,28 +186,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in deque.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="SAOD" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/lab1/deque.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
+        <item itemvalue="Python.methods" />
         <item itemvalue="Python.TSP" />
         <item itemvalue="Python.simple_fractions" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python tests.Python tests in deque.py" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729711982743</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lab 3 - greedy TSP">
+      <option name="closed" value="true" />
+      <created>1732042745442</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732042745442</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +299,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -296,6 +324,7 @@
     <MESSAGE value="lab 1 - report left (2)" />
     <MESSAGE value="lab 2 - start" />
     <MESSAGE value="lab 2 - maybe finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 2 - maybe finished" />
+    <MESSAGE value="lab 3 - greedy TSP" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 3 - greedy TSP" />
   </component>
 </project>
