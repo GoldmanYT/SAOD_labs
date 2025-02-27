@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from methods import *
-from random import randrange
+from random import randrange, shuffle
 
 
 class Window:
@@ -13,11 +13,12 @@ class Window:
         self.root = Tk()
         self.root.geometry('1280x720')
 
-        array_methods = [
-            LinearSearch,
+        methods = [
+            # LinearSearch,
             BinarySearch,
             HomogeneousBinarySearch,
-            InterpolationSearch
+            InterpolationSearch,
+            BinaryTree,
         ]
 
         columns = [str(i) for i in range(self.column_count + 1)]
@@ -29,16 +30,29 @@ class Window:
         for i in range(1, self.column_count + 1):
             self.table.heading(str(i), text=f'n = {i * self.step}')
 
-        for method_class in array_methods:
+        for method_class in methods:
             compare_count_row = [method_class.name + '\t\tЧС']
             time_row = ['\t\t\tВРМ']
             for i in range(1, len(columns)):
                 n = self.step * i
                 method = method_class(n=n)
                 array = [i for i in range(2, 2 * n + 1, 2)]
-                for k in range(self.experiment_count):
-                    value = randrange(2 - (k < self.experiment_count // 2), 2 * n + 1, 2)
-                    method.search(array, value)
+                if method.type == TREE:
+                    temp_array = array[:]
+                    shuffle(temp_array)
+                    for value in temp_array:
+                        method.insert(value)
+
+                for k in range(self.experiment_count * 2):
+                    if k < self.experiment_count:
+                        value = randrange(2, 2 * n + 1, 2)
+                    else:
+                        value = randrange(1, 2 * n + 2, 2)
+                    if method.type == ARRAY:
+                        method.search(array, value)
+                    elif method.type == TREE:
+                        method.search(value)
+
                 compare_count = method.get_compare_count()
                 time = method.get_time()
                 compare_count_row.append('\t\t'.join(str(v) for v in compare_count.values()))

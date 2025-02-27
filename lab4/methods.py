@@ -1,14 +1,17 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 from datetime import datetime
 from math import log2, floor
+from typing import Any
 
+ARRAY, TREE = range(2)
 to_ns = 1_000_000_000
 
 
 def timer(search):
-    def search_with_time(self, array, value):
+    def search_with_time(self, *args):
         start_time = datetime.now()
-        success = search(self, array, value)
+        success = search(self, *args)
         end_time = datetime.now()
         time = round(to_ns * (end_time - start_time).total_seconds())
         if success:
@@ -22,7 +25,8 @@ def timer(search):
 
 
 class ArraySearchMethod(ABC):
-    name = None
+    name = 'Введите имя'
+    type = ARRAY
 
     def __init__(self, *_, **__):
         self.count_compare_fail = 0
@@ -44,12 +48,6 @@ class ArraySearchMethod(ABC):
     def search(self, array, value):
         pass
 
-    def get_result(self):
-        return {'count_compare_success': round(self.count_compare_success / self.count_success),
-                'count_compare_fail': round(self.count_compare_fail / self.count_fail),
-                'time_success': round(self.time_success / self.count_success),
-                'time_fail': round(self.time_fail / self.count_fail)}
-
     def get_compare_count(self):
         return {'count_compare_success': round(self.count_compare_success / self.count_success),
                 'count_compare_fail': round(self.count_compare_fail / self.count_fail)}
@@ -57,9 +55,6 @@ class ArraySearchMethod(ABC):
     def get_time(self):
         return {'time_success': round(self.time_success / self.count_success),
                 'time_fail': round(self.time_fail / self.count_fail)}
-
-    def __str__(self):
-        return str(self.get_result())
 
 
 class LinearSearch(ArraySearchMethod):
@@ -126,6 +121,9 @@ class HomogeneousBinarySearch(ArraySearchMethod):
             else:
                 compare_count += 3
                 return self.success(compare_count)
+            if m >= len(array):
+                compare_count += 1
+                break
 
         return self.fail(compare_count)
 
@@ -139,7 +137,8 @@ class InterpolationSearch(ArraySearchMethod):
         left = 0
         right = len(array) - 1
 
-        while left <= right:
+        while left <= right and array[left] <= value <= array[right]:
+            compare_count += 2
             mid = left + floor((right - left) * (value - array[left]) / (array[right] - array[left]))
             if array[mid] > value:
                 compare_count += 1
@@ -151,12 +150,101 @@ class InterpolationSearch(ArraySearchMethod):
                 compare_count += 3
                 return self.success(compare_count)
 
-            if array[left] > value:
+        return self.fail(compare_count)
+
+
+@dataclass
+class Node:
+    left: Any = None
+    right: Any = None
+    father: Any = None
+    value: Any = None
+
+
+class Tree(ABC):
+    name = 'Введите имя'
+    type = TREE
+
+    def __init__(self, *_, **__):
+        self.root = None
+        self.count_compare_fail = 0
+        self.count_compare_success = 0
+        self.count_fail = 0
+        self.count_success = 0
+        self.time_fail = 0
+        self.time_success = 0
+
+    @abstractmethod
+    def search(self, value):
+        pass
+
+    @abstractmethod
+    def insert(self, value):
+        pass
+
+    @abstractmethod
+    def remove(self, value):
+        pass
+
+    def success(self, count):
+        self.count_compare_success += count
+        return True
+
+    def fail(self, count):
+        self.count_compare_fail += count
+        return False
+
+    def get_compare_count(self):
+        return {'count_compare_success': round(self.count_compare_success / self.count_success),
+                'count_compare_fail': round(self.count_compare_fail / self.count_fail)}
+
+    def get_time(self):
+        return {'time_success': round(self.time_success / self.count_success),
+                'time_fail': round(self.time_fail / self.count_fail)}
+
+
+class BinaryTree(Tree):
+    name = 'Дерево БП'
+
+    @timer
+    def search(self, value):
+        current_node = self.root
+        compare_count = 0
+
+        while current_node is not None:
+            if value < current_node.value:
                 compare_count += 1
-                break
-            elif array[right] < value:
+                current_node = current_node.left
+            elif value > current_node.value:
                 compare_count += 2
-                break
-            compare_count += 2
+                current_node = current_node.right
+            else:
+                compare_count += 3
+                return self.success(compare_count)
 
         return self.fail(compare_count)
+
+    def insert(self, value):
+        current_node = self.root
+        father = None
+
+        while current_node is not None:
+            if value < current_node.value:
+                father = current_node
+                current_node = current_node.left
+            elif value > current_node.value:
+                father = current_node
+                current_node = current_node.right
+            else:
+                return
+
+        new_node = Node(value=value)
+        if self.root is None:
+            self.root = new_node
+        elif value < father.value:
+            father.left = new_node
+        else:
+            father.right = new_node
+
+    def remove(self, value):
+        pass
