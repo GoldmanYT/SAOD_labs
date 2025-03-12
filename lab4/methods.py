@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from math import log2, floor
 from typing import Any
@@ -49,12 +49,26 @@ class ArraySearchMethod(ABC):
         pass
 
     def get_compare_count(self):
-        return {'count_compare_success': round(self.count_compare_success / self.count_success),
-                'count_compare_fail': round(self.count_compare_fail / self.count_fail)}
+        result = {'count_compare_success': 'Нет данных',
+                  'count_compare_fail': 'Нет данных'}
+
+        if self.count_success != 0:
+            result['count_compare_success'] = round(self.count_compare_success / self.count_success)
+        if self.count_fail != 0:
+            result['count_compare_fail'] = round(self.count_compare_fail / self.count_fail)
+
+        return result
 
     def get_time(self):
-        return {'time_success': round(self.time_success / self.count_success),
-                'time_fail': round(self.time_fail / self.count_fail)}
+        result = {'time_success': 'Нет данных',
+                  'time_fail': 'Нет данных'}
+
+        if self.count_success != 0:
+            result['time_success'] = round(self.time_success / self.count_success)
+        if self.count_fail != 0:
+            result['time_fail'] = round(self.time_fail / self.count_fail)
+
+        return result
 
 
 class LinearSearch(ArraySearchMethod):
@@ -153,6 +167,33 @@ class InterpolationSearch(ArraySearchMethod):
         return self.fail(compare_count)
 
 
+class HashTableSearch(ArraySearchMethod):
+    name = 'Поиск с хэшированием'
+    size = 503
+
+    def __init__(self, array, *_, **__):
+        super().__init__()
+        self.hash_table = [[] for _ in range(self.size)]
+        for value in array:
+            hash_ = self.get_hash(self, value)
+            self.hash_table[hash_].append(value)
+
+    @staticmethod
+    def get_hash(self, value):
+        return (value // 2) % self.size
+
+    @timer
+    def search(self, array, value):
+        compare_count = 0
+        hash_ = self.get_hash(self, value)
+        for elem in self.hash_table[hash_]:
+            compare_count += 1
+            if elem == value:
+                return self.success(compare_count)
+
+        return self.fail(compare_count)
+
+
 @dataclass
 class Node:
     left: Any = None
@@ -179,6 +220,10 @@ class Tree(ABC):
         pass
 
     @abstractmethod
+    def search_with_insert_remove(self, value):
+        pass
+
+    @abstractmethod
     def insert(self, value):
         pass
 
@@ -195,12 +240,26 @@ class Tree(ABC):
         return False
 
     def get_compare_count(self):
-        return {'count_compare_success': round(self.count_compare_success / self.count_success),
-                'count_compare_fail': round(self.count_compare_fail / self.count_fail)}
+        result = {'count_compare_success': 'Нет данных',
+                  'count_compare_fail': 'Нет данных'}
+
+        if self.count_success != 0:
+            result['count_compare_success'] = round(self.count_compare_success / self.count_success)
+        if self.count_fail != 0:
+            result['count_compare_fail'] = round(self.count_compare_fail / self.count_fail)
+
+        return result
 
     def get_time(self):
-        return {'time_success': round(self.time_success / self.count_success),
-                'time_fail': round(self.time_fail / self.count_fail)}
+        result = {'time_success': 'Нет данных',
+                  'time_fail': 'Нет данных'}
+
+        if self.count_success != 0:
+            result['time_success'] = round(self.time_success / self.count_success)
+        if self.count_fail != 0:
+            result['time_fail'] = round(self.time_fail / self.count_fail)
+
+        return result
 
 
 class BinaryTree(Tree):
@@ -224,6 +283,9 @@ class BinaryTree(Tree):
 
         return self.fail(compare_count)
 
+    def search_with_insert_remove(self, value):
+        pass
+
     def insert(self, value):
         current_node = self.root
         father = None
@@ -245,6 +307,40 @@ class BinaryTree(Tree):
             father.left = new_node
         else:
             father.right = new_node
+
+    def remove(self, value):
+        pass
+
+
+class AVLTree(BinaryTree):
+    name = 'Поиск в АВЛ-дереве'
+
+
+@dataclass
+class DigitNode:
+    next_nodes: list[Any | None] = field(default_factory=lambda: [None] * 10)
+    is_leaf: bool = False
+
+
+class DigitSearch(Tree):
+    name = 'Цифровой поиск'
+
+    def search(self, value):
+        pass
+
+    def search_with_insert_remove(self, value):
+        pass
+
+    def insert(self, value):
+        current_node = self.root
+        digits = str(value)
+        n_digit = 0
+
+        while current_node is not None:
+            pass
+
+        if self.root is None:
+            pass
 
     def remove(self, value):
         pass

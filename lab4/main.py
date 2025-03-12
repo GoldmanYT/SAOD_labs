@@ -19,6 +19,9 @@ class Window:
             HomogeneousBinarySearch,
             InterpolationSearch,
             BinaryTree,
+            AVLTree,
+            DigitSearch,
+            HashTableSearch,
         ]
 
         columns = [str(i) for i in range(self.column_count + 1)]
@@ -35,8 +38,8 @@ class Window:
             time_row = ['\t\t\tВРМ']
             for i in range(1, len(columns)):
                 n = self.step * i
-                method = method_class(n=n)
                 array = [i for i in range(2, 2 * n + 1, 2)]
+                method = method_class(n=n, array=array)
                 if method.type == TREE:
                     temp_array = array[:]
                     shuffle(temp_array)
