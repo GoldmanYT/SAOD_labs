@@ -36,6 +36,7 @@ class Window:
         for method_class in methods:
             compare_count_row = [method_class.name + '\t\tЧС']
             time_row = ['\t\t\tВРМ']
+            rotation_row = ['\t\t\tВРЩ']
             for i in range(1, len(columns)):
                 n = self.step * i
                 array = [i for i in range(2, 2 * n + 1, 2)]
@@ -61,8 +62,15 @@ class Window:
                 compare_count_row.append('\t\t'.join(str(v) for v in compare_count.values()))
                 time_row.append('\t\t'.join(str(v) for v in time.values()))
 
+                if isinstance(method, AVLTree):
+                    rotation_count = method.get_rotation_count()
+                    rotation_row.append('\t\t'.join(str(v) for v in rotation_count.values()))
+
             self.table.insert('', END, values=compare_count_row)
             self.table.insert('', END, values=time_row)
+
+            if len(rotation_row) > 1:
+                self.table.insert('', END, values=rotation_row)
 
         self.root.mainloop()
 

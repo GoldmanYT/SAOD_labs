@@ -312,8 +312,63 @@ class BinaryTree(Tree):
         pass
 
 
+@dataclass
+class BalanceNode(Node):
+    balance: int = 0
+
+
 class AVLTree(BinaryTree):
     name = 'Поиск в АВЛ-дереве'
+
+    def __init__(self, *_, **__):
+        super().__init__()
+        self.count_rotation_success = 0
+        self.count_rotation_fail = 0
+        self.all_count_rotation_success = 0
+        self.all_count_rotation_fail = 0
+
+    @staticmethod
+    def right_rotation(self, node):
+        father = node.father
+        child = node.left
+
+        child.father = father
+        node.father = child
+
+        node.left = child.right
+        child.right = node
+
+    @staticmethod
+    def left_rotation(self, node):
+        father = node.father
+        child = node.right
+
+        child.father = father
+        node.father = child
+
+        node.right = child.left
+        child.left = node
+
+    def right_left_rotation(self, node):
+        child = node.right
+        self.right_rotation(self, child)
+        self.left_rotation(self, node)
+
+    def left_right_rotation(self, node):
+        child = node.left
+        self.left_rotation(self, child)
+        self.right_rotation(self, node)
+
+    def get_rotation_count(self):
+        result = {'rotation_count_success': 'Нет данных',
+                  'rotation_count_fail': 'Нет данных'}
+
+        if self.all_count_rotation_success != 0:
+            result['rotation_count_success'] = round(self.count_rotation_success / self.all_count_rotation_success)
+        if self.all_count_rotation_fail != 0:
+            result['rotation_count_success'] = round(self.count_rotation_fail / self.all_count_rotation_fail)
+
+        return result
 
 
 @dataclass
@@ -325,22 +380,52 @@ class DigitNode:
 class DigitSearch(Tree):
     name = 'Цифровой поиск'
 
+    @timer
     def search(self, value):
-        pass
+        compare_count = 0
+        father = None
+        current_node = self.root
+        digits = str(value)
+        n_digit = 0
+
+        while n_digit < len(digits) and current_node is not None:
+            father = current_node
+            current_node = current_node.next_nodes[int(digits[n_digit])]
+            n_digit += 1
+            compare_count += 1
+
+        if n_digit == len(digits) and father.is_leaf:
+            return self.success(compare_count)
+
+        return self.fail(compare_count)
 
     def search_with_insert_remove(self, value):
         pass
 
     def insert(self, value):
+        father = None
         current_node = self.root
         digits = str(value)
         n_digit = 0
 
-        while current_node is not None:
-            pass
+        while n_digit < len(digits) and current_node is not None:
+            father = current_node
+            current_node = current_node.next_nodes[int(digits[n_digit])]
+            n_digit += 1
 
+        if n_digit == len(digits):
+            father.is_leaf = True
+            return
         if self.root is None:
-            pass
+            self.root = DigitNode()
+            father = self.root
+            n_digit = 1
+        for i in range(n_digit, len(digits)):
+            new_node = DigitNode()
+            father.next_nodes[int(digits[i])] = new_node
+            father = new_node
+            if i == len(digits) - 1:
+                new_node.is_leaf = True
 
     def remove(self, value):
         pass
