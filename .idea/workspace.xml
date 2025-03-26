@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 4 - array methods">
+    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 4 - binary tree search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab4/methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,24 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in deque.py.executor": "Debug",
-    "Python.TSP.executor": "Run",
-    "Python.deque.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main (2).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.methods.executor": "Run",
-    "Python.simple_fractions.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/DEXP/PycharmProjects/SAOD/lab4",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in deque.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.TSP.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.methods.executor&quot;: &quot;Run&quot;,
+    &quot;Python.simple_fractions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DEXP/PycharmProjects/SAOD/lab4&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DEXP\PycharmProjects\SAOD\lab4" />
@@ -283,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740541904688</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lab 4 - binary tree search">
+      <option name="closed" value="true" />
+      <created>1740686843712</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740686843712</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,7 +340,8 @@
     <MESSAGE value="lab 2 - maybe finished" />
     <MESSAGE value="lab 3 - greedy TSP" />
     <MESSAGE value="lab 4 - array methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 4 - array methods" />
+    <MESSAGE value="lab 4 - binary tree search" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 4 - binary tree search" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

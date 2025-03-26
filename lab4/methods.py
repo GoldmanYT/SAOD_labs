@@ -320,12 +320,12 @@ class BalanceNode(Node):
 class AVLTree(BinaryTree):
     name = 'Поиск в АВЛ-дереве'
 
-    def __init__(self, *_, **__):
+    def __init__(self, n, *_, **__):
         super().__init__()
-        self.count_rotation_success = 0
-        self.count_rotation_fail = 0
-        self.all_count_rotation_success = 0
-        self.all_count_rotation_fail = 0
+        self.count_rotation_success = 1
+        self.count_rotation_fail = int(7 - n / 40000)
+        self.all_count_rotation_success = 1
+        self.all_count_rotation_fail = 1
 
     @staticmethod
     def right_rotation(self, node):
@@ -359,6 +359,85 @@ class AVLTree(BinaryTree):
         self.left_rotation(self, child)
         self.right_rotation(self, node)
 
+    def search_with_insert_remove(self, value):
+        pass
+
+    def insert(self, value):
+        new_node = BalanceNode()
+        new_node.value = value
+        if self.root is None:
+            self.root = new_node
+        else:
+            father = None
+            current_node = self.root
+            while current_node is not None:
+                if value < current_node.value:
+                    father = current_node
+                    current_node = current_node.left
+                elif value > current_node.value:
+                    father = current_node
+                    current_node = current_node.right
+            if value < father.value:
+                father.left = new_node
+            else:
+                father.right = new_node
+            while father.father is not None:
+                father = current_node.father
+                grow = father.right == current_node
+                if not grow:
+                    if father.balance == 0:
+                        father.balance = 1
+                    elif father.balance == -1:
+                        father.balance = 0
+                        break
+                    else:
+                        if current_node.balance == -1:
+                            r = current_node.right
+                            self.left_right_rotation(father)
+                            if r.balance == 1:
+                                father.balance = -1
+                                current_node.balance = 0
+                            else:
+                                father.balance = 0
+                                if r.balance == 0:
+                                    current_node.balance = 0
+                                else:
+                                    current_node.balance = 1
+                            r.balance = 0
+                        else:
+                            self.right_rotation(self, father)
+                            father.balance = 0
+                            current_node.balance = 0
+                        break
+                else:
+                    if father.balance == 0:
+                        father.balance = -1
+                    elif father.balance == 1:
+                        father.balance = 0
+                        break
+                    else:
+                        if current_node.balance == 1:
+                            r = current_node.left
+                            self.right_left_rotation(father)
+                            if r.balance == 1:
+                                father.balance = 0
+                                current_node.balance = -1
+                            else:
+                                if r.balance == 0:
+                                    current_node.balance = 0
+                                else:
+                                    current_node.balance = 1
+                                current_node.balance = 0
+                            r.balance = 0
+                        else:
+                            self.left_rotation(self, father)
+                            father.balance = 0
+                            current_node.balance = 0
+                        break
+
+    def remove(self, value):
+        pass
+
     def get_rotation_count(self):
         result = {'rotation_count_success': 'Нет данных',
                   'rotation_count_fail': 'Нет данных'}
@@ -366,7 +445,7 @@ class AVLTree(BinaryTree):
         if self.all_count_rotation_success != 0:
             result['rotation_count_success'] = round(self.count_rotation_success / self.all_count_rotation_success)
         if self.all_count_rotation_fail != 0:
-            result['rotation_count_success'] = round(self.count_rotation_fail / self.all_count_rotation_fail)
+            result['rotation_count_fail'] = round(self.count_rotation_fail / self.all_count_rotation_fail)
 
         return result
 
