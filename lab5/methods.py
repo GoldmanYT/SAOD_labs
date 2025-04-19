@@ -4,8 +4,10 @@ from datetime import datetime as dt
 
 
 class Result(ctypes.Structure):
-    _fields_ = [('swaps', ctypes.c_ulonglong),
-                ('compares', ctypes.c_ulonglong)]
+    _fields_ = [
+        ('compares', ctypes.c_ulonglong),
+        ('swaps', ctypes.c_ulonglong)
+    ]
 
 
 def array_to_list(n, array):

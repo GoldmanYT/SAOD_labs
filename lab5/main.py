@@ -36,6 +36,7 @@ class Window:
             results = [Result(0, 0) for _ in range(len(list_of_methods))]
             for k in range(self.experiment_count):
                 methods.randomize_array(n, array)
+                methods.copy_array(n, array, copy)
                 for j, method in enumerate(list_of_methods):
                     if method == methods.quick_sort:
                         method(n, array, results[j], 0, n - 1)
