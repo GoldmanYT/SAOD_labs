@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 5 - done">
+    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 5 - fixed">
+      <change afterPath="$PROJECT_DIR$/lab6/SAOD_L_6.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab6/graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab6/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/methods.dll" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/methods.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab5/methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab5/methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,7 @@
     &quot;Python tests.Python tests in deque.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python.TSP.executor&quot;: &quot;Run&quot;,
     &quot;Python.deque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.graph.executor&quot;: &quot;Run&quot;,
     &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
@@ -76,8 +77,8 @@
       <recent name="C:\Users\DEXP\PycharmProjects\pythonProject1\lab1" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TSP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.graph">
+    <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SAOD" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,11 +87,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab3/TSP.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab6/graph.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SAOD" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,11 +109,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab4/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab6/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.graph" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.methods (1)" />
         <item itemvalue="Python.methods" />
-        <item itemvalue="Python.main (2)" />
-        <item itemvalue="Python.TSP" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744159093509</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="lab 5 - fixed">
+      <option name="closed" value="true" />
+      <created>1745069510182</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745069510182</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +371,8 @@
     <MESSAGE value="lab 4 - binary tree search" />
     <MESSAGE value="lab 4 - done" />
     <MESSAGE value="lab 5 - done" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 5 - done" />
+    <MESSAGE value="lab 5 - fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 5 - fixed" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
