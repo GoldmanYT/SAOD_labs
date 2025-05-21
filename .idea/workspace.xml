@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 5 - fixed">
-      <change afterPath="$PROJECT_DIR$/lab6/SAOD_L_6.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab6/graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab6/main.py" afterDir="false" />
+    <list default="true" id="b103b806-7293-423d-bc87-5b82de559d57" name="Changes" comment="lab 6 - №2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/graph.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,7 @@
       <recent name="C:\Users\DEXP\PycharmProjects\pythonProject1\lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.graph">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SAOD" />
       <option name="ENV_FILES" value="" />
@@ -190,8 +188,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.graph" />
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.graph" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.methods (1)" />
         <item itemvalue="Python.methods" />
@@ -318,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745069510182</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="lab 6 - №2">
+      <option name="closed" value="true" />
+      <created>1745381747763</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745381747763</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +378,8 @@
     <MESSAGE value="lab 4 - done" />
     <MESSAGE value="lab 5 - done" />
     <MESSAGE value="lab 5 - fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 5 - fixed" />
+    <MESSAGE value="lab 6 - №2" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 6 - №2" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

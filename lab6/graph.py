@@ -41,7 +41,7 @@ def get_adjacency_structure_from_incident_matrix(
 if __name__ == '__main__':
     from pprint import pprint
 
-    adj_struct = {
+    a_s = {
         'a': ['b', 'e', 'f'],
         'b': ['c'],
         'c': [],
@@ -50,8 +50,8 @@ if __name__ == '__main__':
         'f': ['d', 'g'],
         'g': ['c']
     }
-    pprint(adj_struct)
-    inc_matrix = get_incident_matrix_from_adjacency_structure(adj_struct)
-    pprint(inc_matrix)
-    adj_struct = get_adjacency_structure_from_incident_matrix(inc_matrix)
-    pprint(adj_struct)
+    pprint(a_s)
+    i_m = get_incident_matrix_from_adjacency_structure(a_s)
+    pprint(i_m)
+    a_s = get_adjacency_structure_from_incident_matrix(i_m)
+    pprint(a_s)
